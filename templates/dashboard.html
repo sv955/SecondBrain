@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Brain - Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='fav.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="app-bar">
+        <a href="{{ url_for('dashboard') }}" class="app-bar-link">
+            <span class="logo">🧠</span>
+            <span class="app-name">Second Brain</span>
+        </a>
+        <nav class="app-nav">
+            <a href="{{ url_for('dashboard') }}" class="nav-link active">🏠 Dashboard</a>
+            <a href="{{ url_for('todays_tasks') }}" class="nav-link">📅 Today's Tasks</a>
+            <a href="{{ url_for('create_todo') }}" class="nav-link">➕ Create Todo</a>
+            <a href="{{ url_for('all_todos') }}" class="nav-link">📋 All Todos</a>
+            <a href="{{ url_for('create_experience') }}" class="nav-link">💡 Past Experience</a>
+            <a href="{{ url_for('view_experiences') }}" class="nav-link">📚 All Experiences</a>
+        </nav>
+    </header>
+
+    <div class="full-screen-container">
+        <main class="dashboard">
+            <h2>Dashboard</h2>
+            
+            <div class="card-grid">
+
+                 <a href="{{ url_for('todays_tasks') }}" class="card" style="border-left: 4px solid #4CAF50;">
+                    <div class="card-icon">📅</div>
+                    <h3>Today's Tasks</h3>
+                    <p>View tasks scheduled for today</p>
+                </a>
+                <a href="{{ url_for('create_todo') }}" class="card">
+                    <div class="card-icon">📝</div>
+                    <h3>Create Todo</h3>
+                    <p>Add a new task to your list</p>
+                </a>
+
+               
+
+                <a href="{{ url_for('all_todos') }}" class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>View Todos</h3>
+                    <p>See all your tasks</p>
+                </a>
+
+                <a href="{{ url_for('create_experience') }}" class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>Past Experience</h3>
+                    <p>Document and manage your experiences</p>
+                </a>
+
+                <a href="{{ url_for('view_experiences') }}" class="card">
+                    <div class="card-icon">📚</div>
+                    <h3>All Experiences</h3>
+                    <p>Browse your documented experiences</p>
+                </a>
+            </div>
+
+            <div class="coming-soon">
+                <h3>Coming Soon...</h3>
+                <div class="feature-list">
+                    <span class="feature-badge">📝 Meeting Notes</span>
+                    <span class="feature-badge">📚 Knowledge Base</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
